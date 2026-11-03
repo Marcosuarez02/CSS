@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(250, 255, 255);
+    font-family: Arial, sans-serif;
+    color: rgb(123, 123, 125);
+    text-align: center;
+}
+
+/* Enlaces aislados por la zona a la que pertenecen. */
+header nav ul li a {
+    color: rgb(30, 90, 180);
+}
+
+aside ul li a {
+    color: rgb(180, 90, 30);
+}
+
+footer ul li a {
+    color: rgb(70, 130, 70);
+
+}
+.comprar {
+    padding: 10px 25px;
+    background-color: rgb(0, 255, 68);
+    color: rgb(123, 123, 125);
+    text-decoration: none;
+    border-radius: 40px;
+}
+h1 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.btn-comprar {
+    color: rgb(0, 0, 180);
+}
+
+.btn-destacado {
+    color: rgb(0, 180, 165);
+}
