@@ -1,17 +1,32 @@
+* {
+    box-sizing: border-box;
+    
+}
 body {
     background-color: rgb(250, 255, 255);
     font-family: Arial, sans-serif;
-    color: rgb(123, 123, 125);
-    text-align: center;
+    color: rgb(13, 13, 13);
 }
+/* }
+div {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(20, 228, 13);
+    display: block;
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    margin: 40px;
+    display: block;
+} */
+
 
 /* Enlaces aislados por la zona a la que pertenecen. */
 header nav ul li a {
-    color: rgb(30, 90, 180);
+    color: rgb(226, 226, 226);
 }
 
 aside ul li a {
-    color: rgb(180, 90, 30);
+    color: rgb(16, 15, 15);
 }
 
 footer ul li a {
@@ -33,5 +48,32 @@ h1 {
 }
 
 .btn-destacado {
-    color: rgb(0, 180, 165);
+    color: rgb(0, 0, 0);
+}
+
+
+/*momento 2 encapsulamiento de estilos*/
+header{
+    background-color: rgb(82, 255, 177);
+    background-image: url("img/header.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+main{
+    background-color: rgb(249, 240, 226);
+}
+aside{
+    background-color: rgb(168, 165, 163);
+}
+footer{
+    background-color: rgb(113, 247, 113);
+}   
+
+/* Implementación de padding a cada zona de la página*/
+
+article{
+    padding: 40px;
+    margin: 80px;
+    display: inline-block;
 }
