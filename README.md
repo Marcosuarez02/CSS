@@ -21,3 +21,15 @@ Cuando se aplica un margen grande a un elemento, este crea un área de separaci�
 
 3. **Prevención de colisiones visuales:**
    Centralizar en `:root` evita la deuda técnica y el caos de valores mágicos (números al azar como 13px o 17px), asegurando que a medida que la hoja de estilos crezca, la interfaz conserve un orden matemático y estético predecible.
+
+   ## Hallazgos: Pseudoclases y Pseudoelementos
+
+1. **Diferencia funcional entre pseudoclase y pseudoelemento:**
+   - **Pseudoclase (`:hover`, `:active`, `:focus`):** Selecciona elementos basándose en su estado actual o en la interacción del usuario con la interfaz.
+   - **Pseudoelemento (`::before`, `::after`):** Permite insertar contenido o elementos decorativos virtuales en el DOM sin necesidad de modificar el código HTML estructurado.
+
+2. **Importancia técnica de la pseudoclase `:focus` para accesibilidad:**
+   Garantiza que los usuarios que navegan mediante tecnología de asistencia o mediante la tecla `Tab` del teclado puedan identificar con precisión visual el elemento activo en el que se encuentran posicionados.
+
+3. **Ventaja de inyectar elementos decorativos desde CSS:**
+   Evita contaminar el código HTML con etiquetas vacías o redundantes únicamente con propósitos de diseño, manteniendo el marcado limpio, semántico y fácil de mantener.
