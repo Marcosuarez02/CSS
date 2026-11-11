@@ -1,0 +1,84 @@
+:root {
+    --color-principal: rgb(140, 255, 0);
+    --color-secundario: rgb(0, 180, 18);
+    --color-terciario: rgb(70, 130, 70);
+    --color-fondo: rgb(250, 255, 255);
+    --color-texto: rgb(13, 13, 13);
+    --fuente-pequena: 14px;
+    --fuente-mediana: 16px;
+    --fuente-grande: 32px;
+    --fuente-principal: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    
+}
+body {
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-principal);
+    font-size: var(--fuente-pequena);
+    color: var(--color-texto);
+}
+
+
+/* Enlaces aislados por la zona a la que pertenecen. */
+header nav ul li a {
+    color: var(--color-fondo);
+    font-size: var(--fuente-mediana);
+}
+
+aside ul li a {
+    color: var(--color-texto);
+    font-size: var(--fuente-mediana);
+}
+
+footer ul li a {
+    color: var(--color-terciario);
+
+}
+.comprar {
+    
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+}
+h1 {
+    color: var(--color-texto);
+    font-size: var(--fuente-grande);
+    text-align: center;
+}
+
+.btn-comprar {
+    color: var(--color-secundario);
+}
+
+.btn-destacado {
+    color: var(--color-texto);
+}
+
+
+/*momento 2 encapsulamiento de estilos*/
+header{
+    background-color: var(--color-principal);
+    background-image: url("img/header.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+main{
+    background-color: var(--color-fondo);
+}
+aside{
+    background-color: var(--color-terciario);
+}
+footer{
+    background-color: var(--color-secundario);
+}   
+
+/* Implementación de padding a cada zona de la página*/
+
+article{
+    padding: 40px;
+    margin: 80px;
+    display: inline-block;
+}

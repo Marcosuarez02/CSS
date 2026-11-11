@@ -8,3 +8,16 @@ Es una regla esencial en la arquitectura CSS porque reestructura el cálculo mat
 
 ### 3.Cómo se ven afectados los elementos hermanos cuando le aplicas un margen grande a uno de ellos.
 Cuando se aplica un margen grande a un elemento, este crea un área de separación exterior que empuja físicamente a sus elementos hermanos adyacentes en el flujo del documento, desplazándolos hacia abajo o hacia los lados según su disposición; en flujos verticales tradicionales puede activar el colapso de márgenes (donde solo prevalece el margen más amplio entre hermanos), en flujos horizontales puede provocar saltos de línea no deseados al agotar el ancho del contenedor padre, y en contenedores modernos como Flexbox o Grid suma las distancias exactas sin colapsar, pudiendo forzar a los demás elementos hermanos a comprimirse o reubicarse en los extremos opuestos
+
+## Hallazgos: Centralización de Identidad Visual y Espaciado
+
+1. **Lista completa de variables declaradas:**
+   - **Colores:** `--color-primario`, `--color-secundario`, `--color-fondo`, `--color-texto`, `--color-blanco`.
+   - **Tipografía:** `--fuente-principal` ('roboto').
+   - **Espaciados:** `--espaciado-pequeno` (8px), `--espaciado-medio` (16px), `--espaciado-grande` (24px).
+
+2. **Ventaja de reutilizar medidas de margen y relleno:**
+   Permite mantener una proporción visual estricta y coherente (*consistencia de diseño*). Si necesitamos ajustar el "aire" entre componentes, solo se modifica el token en el `:root` en lugar de buscar selector por selector.
+
+3. **Prevención de colisiones visuales:**
+   Centralizar en `:root` evita la deuda técnica y el caos de valores mágicos (números al azar como 13px o 17px), asegurando que a medida que la hoja de estilos crezca, la interfaz conserve un orden matemático y estético predecible.
