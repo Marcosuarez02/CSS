@@ -15,27 +15,16 @@
     font-size: var(--fuente-pequena);
 }
 
-.footer__legal {
-    display: flex;
-    gap: var(--espaciado-medio);
-}
-
-.footer__legal-link {
-    color: var(--color-fondo);
-    text-decoration: none;
-    font-size: var(--fuente-pequena);
-}
-
-.footer__legal-link:hover {
-    text-decoration: underline;
-}
-
 .footer__list {
     display: flex;
     gap: var(--espaciado-medio);
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+.footer__item {
+    margin: 0;
 }
 
 .footer__link {

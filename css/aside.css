@@ -5,15 +5,9 @@
     gap: var(--espaciado-grande);
     background-color: var(--color-terciario);
     padding: var(--espaciado-grande);
-    width: 250px;
+    width: 240px;
     flex-shrink: 0;
     color: var(--color-fondo);
-}
-
-.menu-lateral__block {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espaciado-pequeno);
 }
 
 .menu-lateral__title {

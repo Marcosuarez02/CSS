@@ -3,8 +3,8 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    flex: 1 1 240px;
-    max-width: 320px;
+    flex: 1 1 220px;
+    max-width: 280px;
     padding: var(--espaciado-grande);
     background-color: var(--color-fondo);
     border: 1px solid #dcdcdc;
@@ -21,7 +21,7 @@
 .card--destacada {
     border-color: var(--color-principal);
     border-width: 2px;
-    box-shadow: 0 4px 12px rgba(140, 255, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(140, 255, 0, 0.35);
 }
 
 .card__title {
@@ -40,7 +40,7 @@
     border-radius: 4px;
 }
 
-/* El resorte invisible que empuja el botón de compra siempre hacia el borde inferior */
+/* El resorte invisible que empuja el botón de compra siempre hacia el fondo */
 .card__description {
     color: var(--color-texto);
     font-size: var(--fuente-pequena);
