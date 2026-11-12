@@ -1,15 +1,42 @@
-/* Componente: Tarjeta de Producto */
-article {
+/* Componente: Tarjeta de Producto (Metodología BEM) */
+.card {
     padding: 40px;
     margin: 80px;
     display: inline-block;
+    background-color: var(--color-fondo);
+    border: 1px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.productos article h3::after {
+.card--destacada {
+    border-color: var(--color-principal);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card__title {
+    color: var(--color-texto);
+    font-size: var(--fuente-mediana);
+    margin-bottom: 8px;
+}
+
+.card__title::after {
     content: "¡Nuevo!";
     background-color: var(--color-principal);
     color: var(--color-texto);
     font-size: var(--fuente-pequena);
     margin-left: 8px;
     padding: 2px 6px;
+}
+
+.card__description {
+    color: var(--color-texto);
+    font-size: var(--fuente-pequena);
+    margin-bottom: 8px;
+}
+
+.card__price {
+    color: var(--color-secundario);
+    font-size: var(--fuente-mediana);
+    font-weight: bold;
+    margin-bottom: 12px;
 }

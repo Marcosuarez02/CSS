@@ -1,27 +1,50 @@
-/* Componente: Botones */
-.comprar {
-    background-color: var(--color-principal);
-    color: var(--color-texto);
-}
-
-.btn-comprar {
-    color: var(--color-secundario);
+/* Componente: Botones (Metodología BEM) */
+.btn {
     display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: var(--fuente-pequena);
+    font-family: var(--fuente-principal);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
 }
 
-.btn-comprar:hover {
+.btn--comprar {
+    color: var(--color-secundario);
+    background-color: transparent;
+}
+
+.btn--comprar:hover {
     background-color: var(--color-secundario);
     color: var(--color-fondo);
     transform: translateY(-2px);
 }
 
-.btn-comprar:active {
+.btn--comprar:active {
     background-color: var(--color-terciario);
     color: var(--color-fondo);
     transform: translateY(2px) scale(0.98);
 }
 
-.btn-destacado {
+.btn--destacado {
     color: var(--color-texto);
+    background-color: var(--color-principal);
+    font-weight: bold;
+}
+
+.btn--destacado:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+}
+
+.btn--secundario {
+    background-color: var(--color-terciario);
+    color: var(--color-fondo);
+}
+
+.btn--secundario:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
 }

@@ -1,22 +1,45 @@
-/* Componente: Menú Lateral */
-aside ul li a {
-    color: var(--color-texto);
-    font-size: var(--fuente-mediana);
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* Componente: Menú Lateral (Metodología BEM) */
+.menu-lateral {
+    background-color: var(--color-terciario);
+    padding: 20px;
 }
 
-aside ul li::before {
+.menu-lateral__title {
+    color: var(--color-fondo);
+    font-size: var(--fuente-mediana);
+    margin-bottom: 12px;
+}
+
+.menu-lateral__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral__item {
+    margin-bottom: 8px;
+}
+
+.menu-lateral__item::before {
     content: ">";
     color: var(--color-principal);
     margin-right: 8px;
 }
 
-aside ul li a:hover {
+.menu-lateral__link {
+    color: var(--color-texto);
+    font-size: var(--fuente-mediana);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 2px 4px;
+}
+
+.menu-lateral__link:hover {
     background-color: var(--color-principal);
     color: var(--color-texto);
 }
 
-aside ul li a:focus {
+.menu-lateral__link:focus {
     outline: 2px solid var(--color-secundario);
     outline-offset: 2px;
 }

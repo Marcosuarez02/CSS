@@ -23,40 +23,74 @@ body {
     font-family: var(--fuente-principal);
     font-size: var(--fuente-pequena);
     color: var(--color-texto);
+    margin: 0;
 }
 
-/* Enlaces aislados por la zona a la que pertenecen. */
-header nav ul li a {
-    color: var(--color-fondo);
-    font-size: var(--fuente-mediana);
-}
-
-footer ul li a {
-    color: var(--color-terciario);
-}
-
-h1 {
-    color: var(--color-texto);
-    font-size: var(--fuente-grande);
-    text-align: center;
-}
-
-/* Encapsulamiento de estilos por secciones */
-header {
+/* Encabezado y Navegación principal */
+.header {
     background-color: var(--color-principal);
     background-image: url("img/header.jpg");
     background-size: cover;
     background-position: center;
+    padding: 20px;
 }
 
-main {
+.header__list {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__link {
+    color: var(--color-fondo);
+    font-size: var(--fuente-mediana);
+    text-decoration: none;
+}
+
+.header__link--active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Contenedor principal */
+.main {
     background-color: var(--color-fondo);
+    padding: 20px;
 }
 
-aside {
-    background-color: var(--color-terciario);
+/* Sección Carrito */
+.cart {
+    padding: 20px;
+    margin: 20px 0;
 }
 
-footer {
+.cart__title {
+    color: var(--color-texto);
+    font-size: var(--fuente-mediana);
+}
+
+/* Pie de página */
+.footer {
     background-color: var(--color-secundario);
+    color: var(--color-fondo);
+    padding: 20px;
+}
+
+.footer__copy {
+    margin: 0 0 10px 0;
+}
+
+.footer__list {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer__link {
+    color: var(--color-terciario);
+    text-decoration: none;
 }
