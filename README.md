@@ -54,3 +54,20 @@ En CSS convencional, el anidamiento profundo de selectores (como `header nav ul 
 La metodología BEM soluciona este problema estableciendo una **arquitectura de especificidad plana**:
 - Todos los selectores estilizan directamente mediante **una única clase** (peso 0-1-0 o valor 10 en la escala de especificidad), independientemente de la profundidad que tenga el elemento en el árbol DOM.
 - Al tener todas las reglas el mismo peso predecible (10), los estilos se rigen limpiamente por el orden de la cascada y la aplicación explícita de modificadores (`.card--destacada`), eliminando las colisiones accidentales y asegurando que ninguna regla sobreescriba a otra de forma involuntaria.
+
+## Hallazgos: Arquitectura Total con Flexbox
+
+### 1. Por qué fue crucial aplicar `min-height: 100vh` y `flex-direction: column` al contenedor global para controlar el pie de página
+Al configurar el contenedor principal (`.app-layout`) con `display: flex; flex-direction: column; min-height: 100vh;` y otorgarle al contenedor intermedio (`.main-wrapper`) la propiedad `flex: 1;`, se soluciona de forma limpia y moderna el problema del *sticky footer*. 
+`min-height: 100vh` asegura que el layout abarque como mínimo el 100% de la altura de la ventana gráfica (viewport height), incluso si el contenido del catálogo es breve. Al ser un contenedor flexible en columna, el elemento central con `flex: 1` se expande dinámicamente absorbiendo todo el espacio vertical sobrante, lo que empuja de manera automática y permanente al `footer` hacia el borde inferior de la pantalla sin recurrir a trucos obsoletos o posicionamientos fijos y absolutos que causaban solapamientos.
+
+### 2. Cómo la propiedad `gap` reemplazó el uso excesivo de márgenes laterales en los menús de navegación
+Históricamente, para separar elementos de un menú horizontal (`ul li`) se recurría a `margin-right` o `margin-left`, obligando a usar selectores auxiliares como `:last-child` o `:first-child` (por ejemplo `margin-right: 0`) para eliminar el margen sobrante en los extremos y evitar descuadres visuales.
+La propiedad `gap` dentro de un contenedor flexible (como `.nav__list { display: flex; gap: var(--espaciado-medio); }`) define el espaciado estricto e intermedio **únicamente entre los elementos flexibles (gutter)**. Esto elimina por completo la necesidad de márgenes perimetrales, selectores de excepción, floats o hacks de inline-block, manteniendo el marcado y las reglas de diseño limpios, matemáticamente consistentes y controlados mediante variables.
+
+### 3. Cómo la unión de BEM, Custom Properties y Flexbox te permitió crear una tarjeta de producto resistente a diferentes longitudes de texto
+La integración de estas tres herramientas resuelve el problema de las tarjetas asimétricas y botones desalineados cuando las descripciones de los productos tienen diferente cantidad de texto:
+- **BEM (`.card`, `.card__description`, `.card__button`, `.card__price-wrapper`):** Proporciona una estructura semántica clara y desacoplada, permitiendo apuntar a cada sub-bloque con especificidad plana.
+- **Custom Properties (`var(--espaciado-medio)`, etc.):** Estandariza los márgenes, paddings, gaps y tipografías desde un único punto centralizado en `:root`.
+- **Flexbox unidimensional (`display: flex; flex-direction: column; height: 100%;`):** Obliga a todas las tarjetas dentro de la fila a estirarse uniformemente al alto de la tarjeta más alta.
+- **El resorte elástico (`flex-grow: 1;` en `.card__description`):** Al aplicar `flex-grow: 1` al texto descriptivo, este absorbe todo el espacio vertical disponible sobrante dentro de la tarjeta. Como resultado, actúa como un pistón que empuja el bloque de precios y el botón de compra (`.card__button`) exactamente a la base inferior de todas las tarjetas, garantizando una alineación visual horizontal simétrica y con acabado de producción.

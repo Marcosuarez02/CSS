@@ -4,15 +4,22 @@
     --color-terciario: rgb(70, 130, 70);
     --color-fondo: rgb(250, 255, 255);
     --color-texto: rgb(13, 13, 13);
+    --color-mutado: rgb(120, 120, 120);
     --fuente-pequena: 14px;
     --fuente-mediana: 16px;
-    --fuente-grande: 32px;
+    --fuente-grande: 22px;
+    --fuente-titulo: 28px;
     --fuente-principal: 'Roboto', sans-serif;
+    --espaciado-pequeno: 8px;
+    --espaciado-medio: 16px;
+    --espaciado-grande: 24px;
 }
 
+@import url('css/header.css');
+@import url('css/aside.css');
 @import url('css/tarjeta.css');
 @import url('css/botones.css');
-@import url('css/menu-lateral.css');
+@import url('css/footer.css');
 
 * {
     box-sizing: border-box;
@@ -26,71 +33,48 @@ body {
     margin: 0;
 }
 
-/* Encabezado y Navegación principal */
-.header {
-    background-color: var(--color-principal);
-    background-image: url("img/header.jpg");
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-}
-
-.header__list {
+/* Macro-arquitectura: Layout Global */
+.app-layout {
     display: flex;
-    gap: 15px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.header__link {
-    color: var(--color-fondo);
-    font-size: var(--fuente-mediana);
-    text-decoration: none;
+.main-wrapper {
+    display: flex;
+    flex: 1;
+    width: 100%;
 }
 
-.header__link--active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-/* Contenedor principal */
 .main {
+    flex: 1;
     background-color: var(--color-fondo);
-    padding: 20px;
+    padding: var(--espaciado-grande);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-grande);
+}
+
+/* Vitrina de productos flexible */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-grande);
 }
 
 /* Sección Carrito */
 .cart {
-    padding: 20px;
-    margin: 20px 0;
+    background-color: #f3faf2;
+    border: 1px solid var(--color-secundario);
+    border-radius: 8px;
+    padding: var(--espaciado-medio);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cart__title {
     color: var(--color-texto);
     font-size: var(--fuente-mediana);
-}
-
-/* Pie de página */
-.footer {
-    background-color: var(--color-secundario);
-    color: var(--color-fondo);
-    padding: 20px;
-}
-
-.footer__copy {
-    margin: 0 0 10px 0;
-}
-
-.footer__list {
-    display: flex;
-    gap: 15px;
-    list-style: none;
     margin: 0;
-    padding: 0;
-}
-
-.footer__link {
-    color: var(--color-terciario);
-    text-decoration: none;
 }

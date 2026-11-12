@@ -1,22 +1,33 @@
-/* Componente: Tarjeta de Producto (Metodología BEM) */
+/* Componente: Tarjeta de Producto (.card) */
 .card {
-    padding: 40px;
-    margin: 80px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1 1 240px;
+    max-width: 320px;
+    padding: var(--espaciado-grande);
     background-color: var(--color-fondo);
-    border: 1px solid transparent;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 
 .card--destacada {
     border-color: var(--color-principal);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-width: 2px;
+    box-shadow: 0 4px 12px rgba(140, 255, 0, 0.3);
 }
 
 .card__title {
     color: var(--color-texto);
     font-size: var(--fuente-mediana);
-    margin-bottom: 8px;
+    margin: 0 0 var(--espaciado-pequeno) 0;
 }
 
 .card__title::after {
@@ -26,17 +37,39 @@
     font-size: var(--fuente-pequena);
     margin-left: 8px;
     padding: 2px 6px;
+    border-radius: 4px;
 }
 
+/* El resorte invisible que empuja el botón de compra siempre hacia el borde inferior */
 .card__description {
     color: var(--color-texto);
     font-size: var(--fuente-pequena);
-    margin-bottom: 8px;
+    margin: 0 0 var(--espaciado-medio) 0;
+    flex-grow: 1;
+    line-height: 1.4;
+}
+
+/* Micro-flexbox en área de precios con alineación baseline */
+.card__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--espaciado-medio);
 }
 
 .card__price {
-    color: var(--color-secundario);
-    font-size: var(--fuente-mediana);
+    font-size: var(--fuente-grande);
     font-weight: bold;
-    margin-bottom: 12px;
+    color: var(--color-secundario);
+}
+
+.card__price--old {
+    font-size: var(--fuente-pequena);
+    color: var(--color-mutado);
+    text-decoration: line-through;
+}
+
+.card__button {
+    text-align: center;
+    width: 100%;
 }

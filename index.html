@@ -12,66 +12,106 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <nav class="header__nav" aria-label="Navegación principal">
-            <ul class="header__list">
-                <li class="header__item"><a href="catalogo.html" class="header__link">Catálogo</a></li>
-                <li class="header__item"><a href="perfil.html" class="header__link">Perfil</a></li>
-                <li class="header__item"><a href="index.html" class="header__link header__link--active" aria-current="page">Inicio</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="main">
-        <section class="products" aria-label="Lista de productos">
-            <article class="card card--destacada">
-                <h3 class="card__title">Sancocho</h3>
-                <p class="card__description">Una deliciosa sopa de sancocho.</p>
-                <p class="card__price">$12.000</p>
-                <a href="#" class="btn btn--comprar btn--destacado">Comprar</a>
-            </article>
-            <article class="card">
-                <h3 class="card__title">Arroz con pollo</h3>
-                <p class="card__description">Arroz con pollo y verduras.</p>
-                <p class="card__price">$15.000</p>
-                <a href="#" class="btn btn--comprar">Comprar</a>
-            </article>
-            <article class="card">
-                <h3 class="card__title">Pollo asado</h3>
-                <p class="card__description">pollo asado con papas y ensalada.</p>
-                <p class="card__price">$18.000</p>
-                <a href="#" class="btn btn--comprar">Comprar</a>
-            </article>
-            <article class="card">
-                <h3 class="card__title">Arroz chino</h3>
-                <p class="card__description">Comida tradicional y típica de China.</p>
-                <p class="card__price">$10.000</p>
-                <a href="#" class="btn btn--comprar btn--secundario">Comprar</a>
-            </article>
-        </section>
-        <section class="cart" aria-label="Carrito de compras">
-            <h2 class="cart__title">Carrito de compras</h2>
-            <button type="button" class="btn btn--secundario">Ver carrito</button>
-        </section>
-        <aside class="menu-lateral">
-            <h2 class="menu-lateral__title">Menú secundario</h2>
-            <nav class="menu-lateral__nav" aria-label="Categorías de productos">
-                <ul class="menu-lateral__list">
-                    <li class="menu-lateral__item"><a href="catalogo.html#sopas" class="menu-lateral__link">Sopas</a></li>
-                    <li class="menu-lateral__item"><a href="catalogo.html#arroces" class="menu-lateral__link">Arroces</a></li>
-                    <li class="menu-lateral__item"><a href="catalogo.html#pollos" class="menu-lateral__link">Pollos</a></li>
+    <div class="app-layout">
+        <header class="header">
+            <div class="header__logo">
+                <h1 class="header__brand">Restaurante Sabor</h1>
+            </div>
+            <nav class="header__nav" aria-label="Navegación principal">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="catalogo.html" class="nav__link">Catálogo</a></li>
+                    <li class="nav__item"><a href="perfil.html" class="nav__link">Perfil</a></li>
+                    <li class="nav__item"><a href="index.html" class="nav__link nav__link--active" aria-current="page">Inicio</a></li>
                 </ul>
             </nav>
-        </aside>
-    </main>
-    <footer class="footer">
-        <p class="footer__copy">&copy; 2024 Restaurante. Todos los derechos reservados.</p>
-        <nav class="footer__nav" aria-label="Redes sociales">
-            <ul class="footer__list">
-                <li class="footer__item"><a href="https://www.facebook.com/" class="footer__link">Facebook</a></li>
-                <li class="footer__item"><a href="https://www.instagram.com/" class="footer__link">Instagram</a></li>
-                <li class="footer__item"><a href="https://twitter.com/" class="footer__link">Twitter</a></li>
-            </ul>
-        </nav>
-    </footer>
+        </header>
+
+        <div class="main-wrapper">
+            <aside class="menu-lateral">
+                <div class="menu-lateral__block">
+                    <h2 class="menu-lateral__title">Categorías</h2>
+                    <nav class="menu-lateral__nav" aria-label="Categorías de productos">
+                        <ul class="menu-lateral__list">
+                            <li class="menu-lateral__item"><a href="catalogo.html#sopas" class="menu-lateral__link">Sopas</a></li>
+                            <li class="menu-lateral__item"><a href="catalogo.html#arroces" class="menu-lateral__link">Arroces</a></li>
+                            <li class="menu-lateral__item"><a href="catalogo.html#pollos" class="menu-lateral__link">Pollos</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="menu-lateral__block">
+                    <h2 class="menu-lateral__title">Filtros</h2>
+                    <ul class="menu-lateral__list">
+                        <li class="menu-lateral__item"><a href="#" class="menu-lateral__link">Más Populares</a></li>
+                        <li class="menu-lateral__item"><a href="#" class="menu-lateral__link">Promociones</a></li>
+                        <li class="menu-lateral__item"><a href="#" class="menu-lateral__link">Nuevos Platos</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main class="main">
+                <section class="products" aria-label="Lista de productos">
+                    <article class="card card--destacada">
+                        <h3 class="card__title">Sancocho</h3>
+                        <p class="card__description">Una deliciosa sopa tradicional de sancocho con mazorca, plátano, yuca, papa y carne, acompañada de arroz y aguacate fresco de la casa.</p>
+                        <div class="card__price-wrapper">
+                            <span class="card__price">$12.000</span>
+                            <span class="card__price--old"><del>$16.000</del></span>
+                        </div>
+                        <a href="#" class="card__button btn btn--comprar btn--destacado">Comprar</a>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card__title">Arroz con pollo</h3>
+                        <p class="card__description">Arroz con pollo desmechado y verduras frescas al vapor seleccionadas diariamente.</p>
+                        <div class="card__price-wrapper">
+                            <span class="card__price">$15.000</span>
+                            <span class="card__price--old"><del>$18.000</del></span>
+                        </div>
+                        <a href="#" class="card__button btn btn--comprar">Comprar</a>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card__title">Pollo asado</h3>
+                        <p class="card__description">Pollo asado dorado al carbón con papas a la francesa crocantes y ensalada fresca con aderezo artesanal.</p>
+                        <div class="card__price-wrapper">
+                            <span class="card__price">$18.000</span>
+                            <span class="card__price--old"><del>$22.000</del></span>
+                        </div>
+                        <a href="#" class="card__button btn btn--comprar">Comprar</a>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card__title">Arroz chino</h3>
+                        <p class="card__description">Comida tradicional oriental con verduras salteadas al wok, raíces chinas y salsa de soya especial.</p>
+                        <div class="card__price-wrapper">
+                            <span class="card__price">$10.000</span>
+                            <span class="card__price--old"><del>$13.000</del></span>
+                        </div>
+                        <a href="#" class="card__button btn btn--comprar btn--secundario">Comprar</a>
+                    </article>
+                </section>
+
+                <section class="cart" aria-label="Carrito de compras">
+                    <h2 class="cart__title">Carrito de compras (0 items)</h2>
+                    <button type="button" class="btn btn--secundario">Ver carrito</button>
+                </section>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p class="footer__copy">&copy; 2026 Restaurante. Todos los derechos reservados.</p>
+            <div class="footer__legal">
+                <a href="#" class="footer__legal-link">Términos del Servicio</a>
+                <a href="#" class="footer__legal-link">Política de Privacidad</a>
+            </div>
+            <nav class="footer__nav" aria-label="Redes sociales">
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="https://www.facebook.com/" class="footer__link">Facebook</a></li>
+                    <li class="footer__item"><a href="https://www.instagram.com/" class="footer__link">Instagram</a></li>
+                    <li class="footer__item"><a href="https://twitter.com/" class="footer__link">Twitter</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
 </body>
 </html>
