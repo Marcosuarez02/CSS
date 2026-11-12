@@ -1,0 +1,22 @@
+/* Componente: Menú Lateral */
+aside ul li a {
+    color: var(--color-texto);
+    font-size: var(--fuente-mediana);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+aside ul li::before {
+    content: ">";
+    color: var(--color-principal);
+    margin-right: 8px;
+}
+
+aside ul li a:hover {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+}
+
+aside ul li a:focus {
+    outline: 2px solid var(--color-secundario);
+    outline-offset: 2px;
+}

@@ -10,10 +10,14 @@
     --fuente-principal: 'Roboto', sans-serif;
 }
 
+@import url('css/tarjeta.css');
+@import url('css/botones.css');
+@import url('css/menu-lateral.css');
+
 * {
     box-sizing: border-box;
-    
 }
+
 body {
     background-color: var(--color-fondo);
     font-family: var(--fuente-principal);
@@ -21,104 +25,38 @@ body {
     color: var(--color-texto);
 }
 
-
 /* Enlaces aislados por la zona a la que pertenecen. */
 header nav ul li a {
     color: var(--color-fondo);
     font-size: var(--fuente-mediana);
 }
 
-aside ul li a {
-    color: var(--color-texto);
-    font-size: var(--fuente-mediana);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-aside ul li::before {
-    content: ">";
-    color: var(--color-principal);
-    margin-right: 8px;
-}
-
-aside ul li a:hover {
-    background-color: var(--color-principal);
-    color: var(--color-texto);
-}
-
-aside ul li a:focus {
-    outline: 2px solid var(--color-secundario);
-    outline-offset: 2px;
-}
-
 footer ul li a {
     color: var(--color-terciario);
+}
 
-}
-.comprar {
-    
-    background-color: var(--color-principal);
-    color: var(--color-texto);
-}
 h1 {
     color: var(--color-texto);
     font-size: var(--fuente-grande);
     text-align: center;
 }
 
-.btn-comprar {
-    color: var(--color-secundario);
-    display: inline-block;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
-}
-
-.btn-comprar:hover {
-    background-color: var(--color-secundario);
-    color: var(--color-fondo);
-    transform: translateY(-2px);
-}
-
-.btn-comprar:active {
-    background-color: var(--color-terciario);
-    color: var(--color-fondo);
-    transform: translateY(2px) scale(0.98);
-}
-
-.productos article h3::after    {
-    content: "¡Nuevo!";
-    background-color: var(--color-principal);
-    color: var(--color-texto);
-    font-size: var(--fuente-pequena);
-    margin-left: 8px;
-    padding: 2px 6px;
-}
-
-.btn-destacado {
-    color: var(--color-texto);
-}
-
-
-/*momento 2 encapsulamiento de estilos*/
-header{
+/* Encapsulamiento de estilos por secciones */
+header {
     background-color: var(--color-principal);
     background-image: url("img/header.jpg");
     background-size: cover;
     background-position: center;
 }
 
-main{
+main {
     background-color: var(--color-fondo);
 }
-aside{
+
+aside {
     background-color: var(--color-terciario);
 }
-footer{
+
+footer {
     background-color: var(--color-secundario);
-}   
-
-/* Implementación de padding a cada zona de la página*/
-
-article{
-    padding: 40px;
-    margin: 80px;
-    display: inline-block;
 }

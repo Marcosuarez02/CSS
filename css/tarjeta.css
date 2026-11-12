@@ -1,0 +1,15 @@
+/* Componente: Tarjeta de Producto */
+article {
+    padding: 40px;
+    margin: 80px;
+    display: inline-block;
+}
+
+.productos article h3::after {
+    content: "¡Nuevo!";
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    font-size: var(--fuente-pequena);
+    margin-left: 8px;
+    padding: 2px 6px;
+}
